@@ -91,11 +91,11 @@ public class CollectionService {
 
     /**
      * Method ...
-     * @return HashMap<UUID, Set<String>>
+     * @return HashMap<UUID, List<String>>
      * @throws IOException
      */
-    public HashMap<UUID, Set<String>> buildFilesCollection() throws IOException {
-        HashMap<UUID, Set<String>> filesMap = new HashMap<UUID, Set<String>>();
+    public HashMap<UUID, List<String>> buildFilesCollection() throws IOException {
+        HashMap<UUID, List<String>> filesMap = new HashMap<UUID, List<String>>();
 
         File dir = new File("documents");
         File[] files = dir.listFiles();
@@ -105,8 +105,8 @@ public class CollectionService {
                 String fileName = child.getName();
                 File file = new File("documents/" + fileName);
                 PDDocument document = PDDocument.load(file);
-                Set<String> hs = this.textService.breakTextIntoTokens(this.getText(document));
-                filesMap.put(UUID.randomUUID(), hs);
+                List<String> words = this.textService.breakTextIntoTokens(this.getText(document));
+                filesMap.put(UUID.randomUUID(), words);
             }
         } else {
             //TODO

@@ -4,23 +4,23 @@ import java.util.*;
 
 public class TF_IDFService {
 
-    private double calculateTF(Set<String> set, String word) {
+    private Double calculateTF(List<String> set, String word) {
         double n = 0;
         for (String s : set) {
             if(s.equalsIgnoreCase(word)) {
                 n++;
-                break;
             }
         }
 
+        //System.out.println("tf=" + n + " " + set.size() + "   " +  n / set.size());
         return n / set.size();
     }
 
-    private double calculateIDF(HashMap<UUID, Set<String>> documents, String word) {
+    private Double calculateIDF(HashMap<UUID, List<String>> documents, String word) {
         double n = 0;
-        for(Map.Entry<UUID, Set<String>> entry : documents.entrySet()) {
-            Set<String> set = entry.getValue();
-            for (String s : set) {
+        for(Map.Entry<UUID, List<String>> entry : documents.entrySet()) {
+            List<String> list = entry.getValue();
+            for (String s : list) {
                 if(s.equalsIgnoreCase(word)) {
                     n++;
                     break;
@@ -28,22 +28,23 @@ public class TF_IDFService {
             }
         }
 
+        //System.out.println("idf=" + Math.log(documents.size() / n));
         return Math.log(documents.size() / n);
     }
 
-    private double calculateTF_IDF_ForWord(HashMap<UUID, Set<String>> documents, Set<String> words,  String word) {
+    private Double calculateTF_IDF_ForWord(HashMap<UUID, List<String>> documents, List<String> words,  String word) {
         double tf = this.calculateTF(words, word);
         double idf = this.calculateIDF(documents, word);
 
         return tf * idf;
     }
 
-    public HashMap<UUID, HashMap<String, Double>> calculateTF_IDF_ForCollection(HashMap<UUID, Set<String>> documents) {
+    public HashMap<UUID, HashMap<String, Double>> calculateTF_IDF_ForCollection(HashMap<UUID, List<String>> documents) {
         HashMap<UUID, HashMap<String, Double>> result = new HashMap<UUID, HashMap<String, Double>>();
 
-        for(Map.Entry<UUID, Set<String>> entry : documents.entrySet()) {
+        for(Map.Entry<UUID, List<String>> entry : documents.entrySet()) {
             UUID documentUuid = entry.getKey();
-            Set<String> words = entry.getValue();
+            List<String> words = entry.getValue();
 
             HashMap<String, Double> tfIdfDocumentMap = new HashMap<String, Double>();
             for (String s : words) {

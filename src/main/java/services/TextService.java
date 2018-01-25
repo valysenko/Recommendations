@@ -15,18 +15,18 @@ public class TextService {
     /**
      *
      * @param text
-     * @return Set<String>
+     * @return List<String>
      */
-    public Set<String> breakTextIntoTokens(String text) {
+    public List<String> breakTextIntoTokens(String text) {
         // LinkedHashSet
-        Set<String> uniqueWords = new HashSet<String>();
+        List<String> words = new ArrayList<String>();
         StringTokenizer st = new StringTokenizer(text);
         while (st.hasMoreTokens()) {
             String word = this.normalizeString(st.nextToken());
-            uniqueWords.add(word);
+            words.add(word);
         }
 
-        return uniqueWords;
+        return words;
     }
 
 }

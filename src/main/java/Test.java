@@ -15,18 +15,25 @@ public class Test {
     public static void main(String[] args) throws IOException {
         CollectionService collectionService = new CollectionService();
         TF_IDFService tfIdfService = new TF_IDFService();
-        HashMap<UUID, Set<String>> filesMap = collectionService.buildFilesCollection();
 
+        HashMap<UUID, List<String>> filesMap = collectionService.buildFilesCollection();
         HashMap<UUID, HashMap<String, Double>> tfIdfFilesMap = tfIdfService.calculateTF_IDF_ForCollection(filesMap);
 
-//        for(Map.Entry<UUID, Set<String>> entry : filesMap.entrySet()) {
-//            UUID key = entry.getKey();
-//            Set<String> set = entry.getValue();
-//            Iterator iter = set.iterator();
-//            while (iter.hasNext()) {
-//                System.out.println(iter.next());
-//            }
-//        }
+        for(Map.Entry<UUID, HashMap<String, Double>> entry : tfIdfFilesMap.entrySet()) {
+            UUID key = entry.getKey();
+            System.out.println(key);
+            HashMap<String, Double> words = entry.getValue();
+
+            int i=0;
+            for(Map.Entry<String, Double> innerEntry : words.entrySet()) {
+                String word = innerEntry.getKey();
+                Double tfIdfValue = innerEntry.getValue();
+                System.out.println(word + " " + tfIdfValue);
+                i++;
+            }
+
+            break;
+        }
     }
 
 }
