@@ -6,14 +6,15 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * For working with PDF files Apache pdfbox library is used
  */
 public class CollectionService {
+
+
+    private TextService textService;
 
     /**
      * @param document
@@ -84,8 +85,17 @@ public class CollectionService {
         document.close();
     }
 
-    public HashMap<UUID, String> buildFilesCollection() throws IOException {
-        HashMap<UUID, String> filesMap = new HashMap<UUID, String>();
+    public CollectionService() {
+        this.textService = new TextService();
+    }
+
+    /**
+     * Method ...
+     * @return HashMap<UUID, Set<String>>
+     * @throws IOException
+     */
+    public HashMap<UUID, Set<String>> buildFilesCollection() throws IOException {
+        HashMap<UUID, Set<String>> filesMap = new HashMap<UUID, Set<String>>();
 
         File dir = new File("documents");
         File[] files = dir.listFiles();
@@ -95,7 +105,8 @@ public class CollectionService {
                 String fileName = child.getName();
                 File file = new File("documents/" + fileName);
                 PDDocument document = PDDocument.load(file);
-                filesMap.put(UUID.randomUUID(), this.getText(document));
+                Set<String> hs = this.textService.breakTextIntoTokens(this.getText(document));
+                filesMap.put(UUID.randomUUID(), hs);
             }
         } else {
             //TODO

@@ -2,41 +2,31 @@ package main.java;
 
 import com.sun.xml.internal.ws.util.StringUtils;
 import main.java.services.CollectionService;
+import main.java.services.TF_IDFService;
+import main.java.services.TextService;
 
+import javax.xml.soap.Text;
 import java.io.IOException;
 import java.io.StreamTokenizer;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.UUID;
+import java.util.*;
 
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        StringTokenizer stt = new StringTokenizer("this is 10 a test");
-        while (stt.hasMoreTokens()) {
-
-            System.out.println(stt.nextToken());
-        }
-
         CollectionService collectionService = new CollectionService();
+        TF_IDFService tfIdfService = new TF_IDFService();
+        HashMap<UUID, Set<String>> filesMap = collectionService.buildFilesCollection();
 
-        HashMap<UUID, String> filesMap = collectionService.buildFilesCollection();
+        HashMap<UUID, HashMap<String, Double>> tfIdfFilesMap = tfIdfService.calculateTF_IDF_ForCollection(filesMap);
 
-        for(Map.Entry<UUID, String> entry : filesMap.entrySet()) {
-            UUID key = entry.getKey();
-            String text = entry.getValue();
-            StringTokenizer st = new StringTokenizer(text);
-
-            // https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html
-            while (st.hasMoreTokens()) {
-                System.out.println(st.nextToken());
-            }
-
-            break;
-//            System.out.println(key);
-//            System.out.println(text);
-        }
+//        for(Map.Entry<UUID, Set<String>> entry : filesMap.entrySet()) {
+//            UUID key = entry.getKey();
+//            Set<String> set = entry.getValue();
+//            Iterator iter = set.iterator();
+//            while (iter.hasNext()) {
+//                System.out.println(iter.next());
+//            }
+//        }
     }
 
 }
