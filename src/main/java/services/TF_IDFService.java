@@ -1,8 +1,16 @@
 package main.java.services;
 
+import main.java.utils.MapUtils;
+
 import java.util.*;
 
 public class TF_IDFService {
+
+    private MapUtils mapUtils;
+
+    public TF_IDFService() {
+        this.mapUtils = new MapUtils();
+    }
 
     private Double calculateTF(List<String> set, String word) {
         double n = 0;
@@ -56,4 +64,18 @@ public class TF_IDFService {
 
         return result;
     }
+
+    public HashMap<UUID, LinkedHashMap<String, Double>> getSorted_TF_IDF_Collection(HashMap<UUID, HashMap<String, Double>> tfIdfFilesMap, int n) {
+        HashMap<UUID, LinkedHashMap<String, Double>> sortedTfIdfFilesMap = new HashMap<UUID, LinkedHashMap<String, Double>>();
+
+        for(Map.Entry<UUID, HashMap<String, Double>> entry : tfIdfFilesMap.entrySet()) {
+            UUID key = entry.getKey();
+            HashMap<String, Double> words = entry.getValue();
+            LinkedHashMap<String, Double> sorted = mapUtils.sortN(words, "DESC", n);
+            sortedTfIdfFilesMap.put(key, sorted);
+        }
+
+        return sortedTfIdfFilesMap;
+    }
+
 }

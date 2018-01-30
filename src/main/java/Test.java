@@ -1,39 +1,38 @@
 package main.java;
 
-import com.sun.xml.internal.ws.util.StringUtils;
 import main.java.services.CollectionService;
 import main.java.services.TF_IDFService;
-import main.java.services.TextService;
+import main.java.utils.MapUtils;
 
-import javax.xml.soap.Text;
 import java.io.IOException;
-import java.io.StreamTokenizer;
 import java.util.*;
 
 public class Test {
 
     public static void main(String[] args) throws IOException {
+        // services
         CollectionService collectionService = new CollectionService();
         TF_IDFService tfIdfService = new TF_IDFService();
+        MapUtils mapUtils = new MapUtils();
 
+        // Collections
+        // map: file uuid => list of words
         HashMap<UUID, List<String>> filesMap = collectionService.buildFilesCollection();
+        // map: file uuid => map: word ->tf_idf value
         HashMap<UUID, HashMap<String, Double>> tfIdfFilesMap = tfIdfService.calculateTF_IDF_ForCollection(filesMap);
+        // map: file uuid => sorted map : word ->tf_idf value
+        HashMap<UUID, LinkedHashMap<String, Double>> sortedTfIdfFilesMap = tfIdfService.getSorted_TF_IDF_Collection(tfIdfFilesMap, 10);
 
+        System.out.println();
         for(Map.Entry<UUID, HashMap<String, Double>> entry : tfIdfFilesMap.entrySet()) {
-            UUID key = entry.getKey();
-            System.out.println(key);
+            System.out.println(entry.getKey());
             HashMap<String, Double> words = entry.getValue();
-
-            int i=0;
-            for(Map.Entry<String, Double> innerEntry : words.entrySet()) {
-                String word = innerEntry.getKey();
-                Double tfIdfValue = innerEntry.getValue();
-                System.out.println(word + " " + tfIdfValue);
-                i++;
-            }
+            Map<String, Double> sorted = mapUtils.sort(entry.getValue(), "DESC");
+            mapUtils.showN(sorted, 10);
 
             break;
         }
+
     }
 
 }

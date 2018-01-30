@@ -97,16 +97,18 @@ public class CollectionService {
     public HashMap<UUID, List<String>> buildFilesCollection() throws IOException {
         HashMap<UUID, List<String>> filesMap = new HashMap<UUID, List<String>>();
 
-        File dir = new File("documents");
+        File dir = new File("documents/2016");
         File[] files = dir.listFiles();
 
         if (files != null) {
             for (File child : files) {
                 String fileName = child.getName();
-                File file = new File("documents/" + fileName);
+                File file = new File("documents/2016/" + fileName);
                 PDDocument document = PDDocument.load(file);
                 List<String> words = this.textService.breakTextIntoTokens(this.getText(document));
-                filesMap.put(UUID.randomUUID(), words);
+                UUID uuid = UUID.randomUUID();
+                System.out.println(fileName + " " + uuid);
+                filesMap.put(uuid, words);
             }
         } else {
             //TODO
