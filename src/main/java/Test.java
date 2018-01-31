@@ -2,6 +2,7 @@ package main.java;
 
 import main.java.services.CollectionService;
 import main.java.services.TF_IDFService;
+import main.java.services.TextService;
 import main.java.utils.MapUtils;
 
 import java.io.IOException;
@@ -10,6 +11,9 @@ import java.util.*;
 public class Test {
 
     public static void main(String[] args) throws IOException {
+        // stemming
+        // https://github.com/Tapkomet/UAStemmingv
+
         // services
         CollectionService collectionService = new CollectionService();
         TF_IDFService tfIdfService = new TF_IDFService();

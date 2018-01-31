@@ -8,8 +8,8 @@ public class TextService {
      * @param word
      * @return String
      */
-    private String normalizeString(String word) {
-        return word.replaceAll("[!?+.^:,;='\"»«]","").toLowerCase();
+    private  String normalizeString(String word) {
+        return word.toLowerCase().replaceAll("[^a-zа-яіїє']+","");
     }
 
     /**
