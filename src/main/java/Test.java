@@ -34,7 +34,7 @@ public class Test {
             Map<String, Double> sorted = mapUtils.sort(entry.getValue(), "DESC");
             mapUtils.showN(sorted, 10);
 
-            break;
+          //  break;
         }
 
     }
