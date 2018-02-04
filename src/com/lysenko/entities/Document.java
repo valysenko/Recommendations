@@ -8,14 +8,14 @@ public class Document {
     private String name;
     private String text;
     private List<String> words;
-    private HashMap<String, Double> tfIdfFilesMap;
+    private HashMap<String, Double> tfIdfMap;
 
     public Document(UUID uuid, String name, String text, List<String> words) {
         this.uuid = uuid;
         this.name = name;
         this.text = text;
         this.words = words;
-        this.tfIdfFilesMap = new HashMap<>();
+        this.tfIdfMap = new HashMap<>();
     }
 
     public UUID getUuid() {
@@ -42,12 +42,12 @@ public class Document {
         this.text = text;
     }
 
-    public Map<String, Double> getTfIdfFilesMap() {
-        return tfIdfFilesMap;
+    public Map<String, Double> getTfIdfMap() {
+        return tfIdfMap;
     }
 
-    public void putTfIdfFilesMapItem(String word, Double tfIdf) {
-        this.tfIdfFilesMap.put(word, tfIdf);
+    public void putTfIdfItem(String word, Double tfIdf) {
+        this.tfIdfMap.put(word, tfIdf);
     }
 
     public List<String> getWords() {
