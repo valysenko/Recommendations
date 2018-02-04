@@ -1,5 +1,6 @@
 package com.lysenko.services;
 
+import com.lysenko.entities.Document;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.text.PDFTextStripper;
@@ -94,7 +95,8 @@ public class CollectionService {
      * @return HashMap<UUID, List<String>>
      * @throws IOException
      */
-    public HashMap<UUID, List<String>> buildFilesCollection() throws IOException {
+    public List<Document> prepareDocumentsCollection() throws IOException {
+        List<Document> list = new ArrayList<>();
         HashMap<UUID, List<String>> filesMap = new HashMap<UUID, List<String>>();
 
         File dir = new File("documents/2016");
@@ -104,17 +106,20 @@ public class CollectionService {
             for (File child : files) {
                 String fileName = child.getName();
                 File file = new File("documents/2016/" + fileName);
-                PDDocument document = PDDocument.load(file);
-                List<String> words = this.textService.breakTextIntoTokens(this.getText(document));
+                PDDocument pdfDocument = PDDocument.load(file);
                 UUID uuid = UUID.randomUUID();
-                System.out.println(fileName + " " + uuid);
-                filesMap.put(uuid, words);
+                String text = this.getText(pdfDocument);
+
+                List<String> words = this.textService.breakTextIntoTokens(text);
+
+                Document document = new Document(uuid, fileName, text, words);
+                list.add(document);
             }
         } else {
             //TODO
         }
 
-        return filesMap;
+        return list;
     }
 
 }
