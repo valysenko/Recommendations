@@ -1,4 +1,4 @@
-package main.java.services;
+package com.lysenko.services;
 
 import org.tartarus.snowball.SnowballProgram;
 import org.tartarus.snowball.ext.Ukrainian;
@@ -39,7 +39,9 @@ public class TextService {
         StringTokenizer st = new StringTokenizer(text);
         while (st.hasMoreTokens()) {
             String word = this.getStemmed(this.normalizeString(st.nextToken()));
-            words.add(word);
+            if (word.length() >= 3) {
+                words.add(word);
+            }
         }
 
         return words;

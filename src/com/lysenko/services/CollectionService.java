@@ -1,4 +1,4 @@
-package main.java.services;
+package com.lysenko.services;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;

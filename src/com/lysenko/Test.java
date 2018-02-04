@@ -1,9 +1,8 @@
-package main.java;
+package com.lysenko;
 
-import main.java.services.CollectionService;
-import main.java.services.TF_IDFService;
-import main.java.services.TextService;
-import main.java.utils.MapUtils;
+import com.lysenko.services.CollectionService;
+import com.lysenko.utils.MapUtils;
+import com.lysenko.services.TF_IDFService;
 
 import java.io.IOException;
 import java.util.*;

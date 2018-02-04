@@ -1,4 +1,4 @@
-package main.java.utils;
+package com.lysenko.utils;
 
 import java.util.Collections;
 import java.util.Comparator;
