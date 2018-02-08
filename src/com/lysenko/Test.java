@@ -2,6 +2,7 @@ package com.lysenko;
 
 import com.lysenko.entities.Document;
 import com.lysenko.services.CollectionService;
+import com.lysenko.services.TextService;
 import com.lysenko.utils.MapUtils;
 import com.lysenko.services.TF_IDFService;
 

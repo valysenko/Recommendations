@@ -110,7 +110,11 @@ public class CollectionService {
                 UUID uuid = UUID.randomUUID();
                 String text = this.getText(pdfDocument);
 
-                List<String> words = this.textService.breakTextIntoTokens(text);
+                // tokens
+                //List<String> words = this.textService.breakTextIntoTokens(text);
+
+                // 2-gram
+                List<String> words = this.textService.breakTextIntoTwoGrams(text);
 
                 Document document = new Document(uuid, fileName, text, words);
                 list.add(document);

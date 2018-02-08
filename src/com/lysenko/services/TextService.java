@@ -47,4 +47,26 @@ public class TextService {
         return words;
     }
 
+    /**
+     *
+     * @param text
+     * @return List<String>
+     */
+    public List<String> breakTextIntoTwoGrams(String text) {
+        // LinkedHashSet
+        List<String> words = new ArrayList<String>();
+        StringTokenizer st = new StringTokenizer(text);
+
+        String temp = this.getStemmed(this.normalizeString(st.nextToken()));
+        while (st.hasMoreTokens()) {
+            String word = this.getStemmed(this.normalizeString(st.nextToken()));
+            if (word.length() >= 3 && temp.length() >= 3) {
+                words.add(temp + " " + word);
+            }
+            temp = word;
+        }
+
+        return words;
+    }
+
 }

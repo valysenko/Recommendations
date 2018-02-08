@@ -63,7 +63,6 @@ public class TF_IDFService {
     public void calculateTF_IDF_ForDocuments(List<Document> documents) {
         for (Document document : documents) {
             List<String> words = document.getWords();
-            HashMap<String, Double> tfIdfDocumentMap = new HashMap<String, Double>();
             for (String s : words) {
                 document.putTfIdfItem(s, this.calculateTF_IDF_ForWord(documents, words, s));
             }
