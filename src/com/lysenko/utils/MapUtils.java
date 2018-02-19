@@ -1,5 +1,7 @@
 package com.lysenko.utils;
 
+import com.lysenko.entities.Document;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -12,14 +14,6 @@ import java.util.Map.Entry;
 
 public class MapUtils {
 
-    /**
-     * Auxiliary method for sorting map
-     * @param map
-     * @param order
-     * @param <K>
-     * @param <V>
-     * @return List<Map.Entry<K,V>>
-     */
     private <K,V extends Comparable<? super V>> List<Map.Entry<K,V>> getSortedList(Map<K,V> map, String order) {
         List<Map.Entry<K,V>> list = new LinkedList<Map.Entry<K,V>>(map.entrySet());
 
@@ -38,15 +32,7 @@ public class MapUtils {
         return list;
     }
 
-    /**
-     *
-     * @param map
-     * @param order
-     * @param <K>
-     * @param <V>
-     * @return Map<K,V>
-     */
-    public <K,V extends Comparable<? super V>> Map<K,V> sort(Map<K,V> map, String order) {
+    public <K,V extends Comparable<? super V>> Map<K,V> getSortedMap(Map<K,V> map, String order) {
 
         // 1. Sort list based on values
         List<Map.Entry<K,V>> list = this.getSortedList(map, order);
@@ -60,15 +46,7 @@ public class MapUtils {
         return sortedMap;
     }
 
-    /**
-     *
-     * @param map
-     * @param order
-     * @param <K>
-     * @param <V>
-     * @return Map<K,V>
-     */
-    public <K,V extends Comparable<? super V>> LinkedHashMap<K,V> sortN(Map<K,V> map, String order, int n) {
+    public <K,V extends Comparable<? super V>> LinkedHashMap<K,V> getSortedMapOfNElements(Map<K,V> map, String order, int n) {
 
         // 1. Sort list based on values
         List<Map.Entry<K,V>> list = this.getSortedList(map, order);
@@ -87,34 +65,26 @@ public class MapUtils {
         return sortedMap;
     }
 
+    public <K,V extends Comparable<? super V>> void sortNInDocument(Document document,String order, int n) {
 
-    /**
-     * Method prints all collection
-     * @param map
-     * @param <K>
-     * @param <V>
-     */
+        // 1. Sort list based on values
+        List<Map.Entry<K,V>> list = this.getSortedList((Map<K, V>) document.getTfIdfMap(), order);
+
+        // 2. Create map based on sorted list
+        int i =0;
+        for (Entry<K,V> entry : list) {
+            if (i == n) {
+                break;
+            }
+            document.putTfIdfSortedItem((String)entry.getKey(), (Double)entry.getValue());
+            i++;
+        }
+
+    }
+
     public <K,V extends Comparable<? super V>> void show(Map<K, V> map) {
         for (Entry<K, V> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " : "+ entry.getValue());
-        }
-    }
-
-    /**
-     * Method prints n elements of  collection
-     * @param map
-     * @param n
-     * @param <K>
-     * @param <V>
-     */
-    public <K,V extends Comparable<? super V>> void showN(Map<K, V> map, int n) {
-        int i = 0;
-        for (Entry<K, V> entry : map.entrySet()) {
-            if (i == n){
-                break;
-            }
-            System.out.println(entry.getKey() + " : "+ entry.getValue());
-            i++;
         }
     }
 

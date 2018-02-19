@@ -114,7 +114,10 @@ public class CollectionService {
                 //List<String> words = this.textService.breakTextIntoTokens(text);
 
                 // 2-gram
-                List<String> words = this.textService.breakTextIntoTwoGrams(text);
+                //List<String> words = this.textService.breakTextIntoTwoGrams(text);
+
+                // 1 and 2 gram
+                List<String> words = this.textService.breakTextIntoUniGramsAndTwoGrams(text);
 
                 Document document = new Document(uuid, fileName, text, words);
                 list.add(document);

@@ -10,12 +10,16 @@ public class Document {
     private List<String> words;
     private HashMap<String, Double> tfIdfMap;
 
+    // for convenience in testing
+    private LinkedHashMap<String, Double> tfIdfSortedMap;
+
     public Document(UUID uuid, String name, String text, List<String> words) {
         this.uuid = uuid;
         this.name = name;
         this.text = text;
         this.words = words;
         this.tfIdfMap = new HashMap<>();
+        this.tfIdfSortedMap = new LinkedHashMap<>();
     }
 
     public UUID getUuid() {
@@ -48,6 +52,14 @@ public class Document {
 
     public void putTfIdfItem(String word, Double tfIdf) {
         this.tfIdfMap.put(word, tfIdf);
+    }
+
+    public LinkedHashMap<String, Double> getTfIdfSortedMap() {
+        return this.tfIdfSortedMap;
+    }
+
+    public void putTfIdfSortedItem(String word, Double tfIdf) {
+        this.tfIdfSortedMap.put(word, tfIdf);
     }
 
     public List<String> getWords() {
