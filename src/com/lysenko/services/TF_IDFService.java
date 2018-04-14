@@ -2,6 +2,7 @@ package com.lysenko.services;
 
 import com.lysenko.entities.Document;
 import com.lysenko.utils.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 
@@ -13,26 +14,8 @@ public class TF_IDFService {
         this.mapUtils = new MapUtils();
     }
 
-//    public HashMap<UUID, LinkedHashMap<String, Double>> getSorted_TF_IDF_Collection(HashMap<UUID, HashMap<String, Double>> tfIdfFilesMap, int n) {
-//        HashMap<UUID, LinkedHashMap<String, Double>> sortedTfIdfFilesMap = new HashMap<UUID, LinkedHashMap<String, Double>>();
-//
-//        for(Map.Entry<UUID, HashMap<String, Double>> entry : tfIdfFilesMap.entrySet()) {
-//            UUID key = entry.getKey();
-//            HashMap<String, Double> words = entry.getValue();
-//            LinkedHashMap<String, Double> sorted = mapUtils.sortN(words, "DESC", n);
-//            sortedTfIdfFilesMap.put(key, sorted);
-//        }
-//
-//        return sortedTfIdfFilesMap;
-//    }
-
     private Double calculateTF(List<String> set, String word) {
-        double n = 0;
-        for (String s : set) {
-            if(s.equalsIgnoreCase(word)) {
-                n++;
-            }
-        }
+        double n = Collections.frequency(set, word);
 
         return n / set.size();
     }
@@ -41,14 +24,10 @@ public class TF_IDFService {
         double n = 0;
         for (Document document : documents) {
             List<String> list = document.getWords();
-            for (String s : list) {
-                if(s.equalsIgnoreCase(word)) {
-                    n++;
-                    break;
-                }
+            if(list.contains(word)) {
+                n++;
             }
         }
-
 
         return Math.log(documents.size() / n);
     }

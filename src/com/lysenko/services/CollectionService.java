@@ -99,22 +99,15 @@ public class CollectionService {
         List<Document> list = new ArrayList<>();
         HashMap<UUID, List<String>> filesMap = new HashMap<UUID, List<String>>();
 
-        File dir = new File("documents/2016");
+        File dir = new File("documents/100");
         File[] files = dir.listFiles();
-
         if (files != null) {
             for (File child : files) {
                 String fileName = child.getName();
-                File file = new File("documents/2016/" + fileName);
+                File file = new File("documents/100/" + fileName);
                 PDDocument pdfDocument = PDDocument.load(file);
                 UUID uuid = UUID.randomUUID();
                 String text = this.getText(pdfDocument);
-
-                // tokens
-                //List<String> words = this.textService.breakTextIntoTokens(text);
-
-                // 2-gram
-                //List<String> words = this.textService.breakTextIntoTwoGrams(text);
 
                 // 1 and 2 gram
                 List<String> words = this.textService.breakTextIntoUniGramsAndTwoGrams(text);
@@ -123,6 +116,7 @@ public class CollectionService {
                 list.add(document);
             }
         } else {
+            System.out.println("error");
             //TODO
         }
 

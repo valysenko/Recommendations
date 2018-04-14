@@ -1,0 +1,197 @@
+1. Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.27455140049946714
+
+2. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Cherkasov_Marshrutyzatsiia_v_merezhi.pdf
+0.07882036729666558
+
+3. Hlybovets_Porivniannia_Neo4_15.pdf - Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf
+0.04010071662258447
+
+4. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.03773316428597222
+
+5. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Meitus_Rivni_intelektu.pdf
+0.03683284830018287
+
+6. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.02609968012850427
+
+7. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Hlybovets_Porivniannia_Neo4_15.pdf
+0.017456256540069427
+
+8. Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf - Meitus_Rivni_intelektu.pdf
+0.01743139944893873
+
+9. Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.013415381625321523
+
+10. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.01326419115897213
+
+11. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.012915456096717548
+
+12. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf
+0.011078546000190384
+
+13. Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf - Meitus_Rivni_intelektu.pdf
+0.007262728848981902
+
+14. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf
+0.006967167849848834
+
+15. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf
+0.006230886536761383
+
+16. Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf - Meitus_Rivni_intelektu.pdf
+0.005884963173856705
+
+17. Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.005668173969513205
+
+18. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Cherkasov_Arkhitektura_suchasnykh_system_15.pdf
+0.005052035360550334
+
+19. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.004451147117686791
+
+20. Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.004392719921203187
+
+21. Meitus_Rivni_intelektu.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.00405545825017545
+
+22. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Meitus_Rivni_intelektu.pdf
+0.004015645238661537
+
+23. Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.002856067166496034
+
+24. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.0028303302912244806
+
+25. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Hlybovets_Porivniannia_Neo4_15.pdf
+0.0023664329484578733
+
+26. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf
+0.0019069293931168884
+
+27. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Cherkasov_Marshrutyzatsiia_v_merezhi.pdf
+0.0017198774515252593
+
+28. Hlybovets_Porivniannia_Neo4_15.pdf - Meitus_Rivni_intelektu.pdf
+0.0012618370285825428
+
+29. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Meitus_Rivni_intelektu.pdf
+7.998046663867716E-4
+
+30. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+31. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+32. Bublyk_Davydenko_Kolaboratyvni_metody.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+33. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Hlybovets_Porivniannia_Neo4_15.pdf
+0.0
+
+34. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf
+0.0
+
+35. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.0
+
+36. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.0
+
+37. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+38. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+39. Cherkasov_Arkhitektura_suchasnykh_system_15.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+40. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf
+0.0
+
+41. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.0
+
+42. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.0
+
+43. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+44. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Meitus_Rivni_intelektu.pdf
+0.0
+
+45. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+46. Cherkasov_Marshrutyzatsiia_v_merezhi.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+47. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Hlybovets_Porivniannia_Neo4_15.pdf
+0.0
+
+48. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf
+0.0
+
+49. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.0
+
+50. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.0
+
+51. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+52. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Meitus_Rivni_intelektu.pdf
+0.0
+
+53. Didmanidze_Didmanidze_The_ImportanceDidmanidze_Didmanidze_The_Importance.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+54. Hlybovets_Porivniannia_Neo4_15.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.0
+
+55. Hlybovets_Porivniannia_Neo4_15.pdf - Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf
+0.0
+
+56. Hlybovets_Porivniannia_Neo4_15.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+57. Hlybovets_Porivniannia_Neo4_15.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+58. Hlybovets_Porivniannia_Neo4_15.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+59. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf
+0.0
+
+60. Hlybovets_Zbun_Pidsystema_poshuku_zobrazhen.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+61. Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf - Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf
+0.0
+
+62. Horborukov_Oletskyi_Servis_avtomatyzovanoho_zapysu.pdf - Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf
+0.0
+
+63. Horokhovskyi_Halkovska_Modyfikatsii_alhorytmu.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+64. Kasianiuk_Maliutenko_Shkilniak_Cekventsiini_chyslennia.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+65. Meitus_Rivni_intelektu.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0
+
+66. Nikitchenko_Shkilniak_Pershoporiadkovi_lohiky.pdf - Norkin_Visual_Evolutionary_Search.pdf
+0.0

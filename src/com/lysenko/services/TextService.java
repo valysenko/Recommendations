@@ -79,16 +79,18 @@ public class TextService {
         List<String> words = new ArrayList<String>();
         StringTokenizer st = new StringTokenizer(text);
 
-        String temp = this.getStemmed(this.normalizeString(st.nextToken()));
-        while (st.hasMoreTokens()) {
-            String word = this.getStemmed(this.normalizeString(st.nextToken()));
-            if (temp.length() >= 3) {
-                words.add(temp);
-                if (word.length() >= 3) {
-                    words.add(temp + " " + word);
+        if(st.hasMoreTokens()) {
+            String temp = this.getStemmed(this.normalizeString(st.nextToken()));
+            while (st.hasMoreTokens()) {
+                String word = this.getStemmed(this.normalizeString(st.nextToken()));
+                if (temp.length() >= 3) {
+                    words.add(temp);
+                    if (word.length() >= 3) {
+                        words.add(temp + " " + word);
+                    }
                 }
+                temp = word;
             }
-            temp = word;
         }
 
         return words;

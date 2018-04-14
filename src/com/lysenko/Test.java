@@ -27,10 +27,10 @@ public class Test {
 
         // 3. Save n sorted tf-idf collections in separate collection in the document :(
         for(Document document : documents) {
-            mapUtils.sortNInDocument(document, "DESC", 100);
+            mapUtils.sortNInDocument(document, "DESC", 10);
         }
 
-        // 4. Dictionary
+        // 4. Dictionary: use Redis
         HashSet<String> dictionary = new HashSet<>();
         for(Document document : documents) {
             for (Map.Entry<String, Double> entry : document.getTfIdfSortedMap().entrySet()) {
@@ -41,14 +41,34 @@ public class Test {
         // 5. Prepare cosine similarity collection: calculate cosine similarity for each 2 documents and save it
         List<DocumentCosineSimilarity> dcsCollection = cosineSimilarityService.prepareCollection(documents, dictionary);
 
-        // 6. Show
+        int i= 1;
         for(DocumentCosineSimilarity dcs : dcsCollection) {
-            System.out.println(dcs.getDocument1().getName());
-            System.out.println(dcs.getDocument2().getName());
+            System.out.println(i + ". "+ dcs.getDocument1().getName() + " - " + dcs.getDocument2().getName());
             System.out.println(dcs.getCosineSimilarityValue());
             System.out.println();
+            i++;
         }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+//
+        Collections.sort(dcsCollection, new Comparator<DocumentCosineSimilarity>() {
+            @Override
+            public int compare(DocumentCosineSimilarity lhs, DocumentCosineSimilarity rhs) {
+                // -1 - less than, 1 - greater than, 0 - equal, all inversed for descending
+                return lhs.getCosineSimilarityValue() > rhs.getCosineSimilarityValue() ? -1 :
+                        (lhs.getCosineSimilarityValue() < rhs.getCosineSimilarityValue()) ? 1 : 0;
+            }
+        });
 
+        // 6. Show
+        i= 1;
+        for(DocumentCosineSimilarity dcs : dcsCollection) {
+            System.out.println(i + ". "+ dcs.getDocument1().getName() + " - " + dcs.getDocument2().getName());
+            System.out.println(dcs.getCosineSimilarityValue());
+            System.out.println();
+            i++;
+        }
 
     }
 
