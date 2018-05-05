@@ -3,7 +3,7 @@ package com.lysenko.services;
 import com.lysenko.entities.Document;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
-import org.apache.pdfbox.text.PDFTextStripper;
+import org.apache.pdfbox.util.PDFTextStripper;
 
 import java.io.File;
 import java.io.IOException;
@@ -97,27 +97,16 @@ public class CollectionService {
      */
     public List<Document> prepareDocumentsCollection() throws IOException {
         List<Document> list = new ArrayList<>();
-        HashMap<UUID, List<String>> filesMap = new HashMap<UUID, List<String>>();
-
         File dir = new File("documents/100");
         File[] files = dir.listFiles();
-        if (files != null) {
-            for (File child : files) {
-                String fileName = child.getName();
-                File file = new File("documents/100/" + fileName);
-                PDDocument pdfDocument = PDDocument.load(file);
-                UUID uuid = UUID.randomUUID();
-                String text = this.getText(pdfDocument);
-
-                // 1 and 2 gram
-                List<String> words = this.textService.breakTextIntoUniGramsAndTwoGrams(text);
-
-                Document document = new Document(uuid, fileName, text, words);
-                list.add(document);
-            }
-        } else {
-            System.out.println("error");
-            //TODO
+        for (File child : files) {
+            String fileName = child.getName();
+            File file = new File("documents/100/" + fileName);
+            PDDocument pdfDocument = PDDocument.load(file);
+            String text = this.getText(pdfDocument);
+            List<String> words = this.textService.breakTextIntoUniGramsAndBiGrams(text);
+            Document document = new Document(UUID.randomUUID(), fileName, this.getText(pdfDocument), words);
+            list.add(document);
         }
 
         return list;

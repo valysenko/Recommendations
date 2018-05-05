@@ -9,9 +9,20 @@ public class Document {
     private String text;
     private List<String> words;
     private HashMap<String, Double> tfIdfMap;
+    private List<TfIdfItem> tfIdfList;
 
     // for convenience in testing
     private LinkedHashMap<String, Double> tfIdfSortedMap;
+
+    public Document() {
+        this.uuid = UUID.randomUUID();
+        this.name = "";
+        this.text = "";
+        this.words = new ArrayList<>();
+        this.tfIdfMap = new HashMap<>();
+        this.tfIdfSortedMap = new LinkedHashMap<>();
+        this.tfIdfList = new ArrayList<>();
+    }
 
     public Document(UUID uuid, String name, String text, List<String> words) {
         this.uuid = uuid;
@@ -20,6 +31,7 @@ public class Document {
         this.words = words;
         this.tfIdfMap = new HashMap<>();
         this.tfIdfSortedMap = new LinkedHashMap<>();
+        this.tfIdfList = new ArrayList<>();
     }
 
     public UUID getUuid() {
@@ -70,4 +82,15 @@ public class Document {
         this.words.add(word);
     }
 
+    public List<TfIdfItem> getIfIdfList() {
+        return tfIdfList;
+    }
+
+    public void setIfIdfList(List<TfIdfItem> ifIdfList) {
+        this.tfIdfList = ifIdfList;
+    }
+
+    public void addTfIdfListItem(TfIdfItem tfIdfItem) {
+        this.tfIdfList.add(tfIdfItem);
+    }
 }

@@ -1,6 +1,7 @@
 package com.lysenko.services;
 
 import com.lysenko.entities.Document;
+import com.lysenko.entities.TfIdfItem;
 import com.lysenko.utils.MapUtils;
 import org.apache.commons.lang3.StringUtils;
 
@@ -43,7 +44,8 @@ public class TF_IDFService {
         for (Document document : documents) {
             List<String> words = document.getWords();
             for (String s : words) {
-                document.putTfIdfItem(s, this.calculateTF_IDF_ForWord(documents, words, s));
+               // document.putTfIdfItem(s, this.calculateTF_IDF_ForWord(documents, words, s));
+                document.addTfIdfListItem(new TfIdfItem(s, this.calculateTF_IDF_ForWord(documents, words, s)));
             }
         }
 

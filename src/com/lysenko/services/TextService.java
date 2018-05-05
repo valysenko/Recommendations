@@ -52,7 +52,7 @@ public class TextService {
      * @param text
      * @return List<String>
      */
-    public List<String> breakTextIntoTwoGrams(String text) {
+    public List<String> breakTextIntoBiGrams(String text) {
         // LinkedHashSet
         List<String> words = new ArrayList<String>();
         StringTokenizer st = new StringTokenizer(text);
@@ -74,7 +74,7 @@ public class TextService {
      * @param text
      * @return List<String>
      */
-    public List<String> breakTextIntoUniGramsAndTwoGrams(String text) {
+    public List<String> breakTextIntoUniGramsAndBiGrams(String text) {
         // LinkedHashSet
         List<String> words = new ArrayList<String>();
         StringTokenizer st = new StringTokenizer(text);
